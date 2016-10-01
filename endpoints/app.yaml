@@ -1,0 +1,45 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+# --- Handlers
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /js
+  static_dir: static/js
+
+- url: /img
+  static_dir: static/img
+
+- url: /css
+  static_dir: static/bootstrap/css
+
+- url: /fonts
+  static_dir: static/fonts
+
+- url: /partials
+  static_dir: static/partials
+
+- url: /_ah/spi/.*
+  script: main.api
+  secure: always
+
+
+# --- Libraries
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
+- name: pycrypto
+  version: latest
+
+- name: endpoints
+  version: latest
+
+- name: jinja2
+  version: latest
